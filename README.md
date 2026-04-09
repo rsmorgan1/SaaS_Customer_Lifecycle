@@ -81,11 +81,11 @@ theme_saas <- function() {
 ```{r load-data}
 # Load all five Ravenstack operational tables
 # In production, these would come from ERP/CRM/billing system extracts
-accounts     <- read_csv("ravenstack_accounts.csv")
-subscriptions <- read_csv("ravenstack_subscriptions.csv")
-churn_events <- read_csv("ravenstack_churn_events.csv")
-feature_usage <- read_csv("ravenstack_feature_usage.csv")
-support_tickets <- read_csv("ravenstack_support_tickets.csv")
+accounts     <- read_csv("../RapidSOS/ravenstack_accounts.csv")
+subscriptions <- read_csv("../RapidSOS/ravenstack_subscriptions.csv")
+churn_events <- read_csv("../RapidSOS/ravenstack_churn_events.csv")
+feature_usage <- read_csv("../RapidSOS/ravenstack_feature_usage.csv")
+support_tickets <- read_csv("../RapidSOS/ravenstack_support_tickets.csv")
 
 cat("Data loaded successfully:\n")
 cat("  Accounts:        ", nrow(accounts), "rows\n")
@@ -773,7 +773,8 @@ account_health %>%
     col.names = c("Account", "Plan", "Industry", "MRR", "Features Used",
                    "Tickets", "Escalations", "Risk Score")
   ) %>%
-  kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE)
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE) %>%
+  row_spec(1:5, bold = TRUE, color = "#D32F2F")
 ```
 
 ---
@@ -992,4 +993,23 @@ Based on the cross-system analysis above, here are three actionable recommendati
 
 2. **Implement Proactive Churn Intervention** — The risk scoring model identifies
    high-risk accounts before they leave. Route these to a dedicated retention team.
-   The high-risk watchlist in Section 4 s
+   The high-risk watchlist in Section 4 shows the specific accounts and their MRR at
+   stake. Prioritize Enterprise accounts where the revenue impact is largest.
+
+3. **Investigate Mid-2024 Cohort Retention Dip** — Cohort analysis reveals that accounts
+   signing up in Q2-Q3 2024 are retaining at lower rates than earlier cohorts. This
+   warrants investigation: was there a product change, onboarding shift, or change in
+   acquisition channel mix? Understanding the root cause is urgent to prevent continued
+   deterioration.
+
+---
+
+*This analysis was built using R and the tidyverse, connecting five operational data
+tables to create a unified view of customer health. In a production environment, these
+data joins would pull from NetSuite (billing), CRM (accounts), and product telemetry
+(feature usage) to maintain a live dashboard for the Finance team.*
+
+---
+
+**Notebook by Russell Morgan** | Built with R, ggplot2, and the tidyverse |
+`r format(Sys.Date(), "%B %Y")`
