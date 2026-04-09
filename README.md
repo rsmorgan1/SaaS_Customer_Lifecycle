@@ -1013,3 +1013,8 @@ data joins would pull from NetSuite (billing), CRM (accounts), and product telem
 
 **Notebook by Russell Morgan** | Built with R, ggplot2, and the tidyverse |
 `r format(Sys.Date(), "%B %Y")`
+
+---
+
+**Notebook by Russell Morgan** | Built with R, ggplot2, and the tidyverse |
+`r format(Sys.Date(), "%B %Y")`
