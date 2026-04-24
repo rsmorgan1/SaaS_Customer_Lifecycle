@@ -2,13 +2,13 @@
 
 **Cross-system analysis of customer health, revenue dynamics, and churn drivers using five operational datasets.**
 
-Built to demonstrate the analytical workflow of a BI & AI Analyst on a SaaS Finance team — joining data across billing, CRM, product telemetry, and support systems to surface actionable insights for executive decision-making.
+Built to demonstrate the analytical workflow of a BI & AI Analyst on a SaaS Finance team - joining data across billing, CRM, product telemetry, and support systems to surface actionable insights for executive decision-making.
 
 ---
 
 ## The Business Question
 
-A SaaS company has customer data scattered across five operational systems. Leadership needs a unified view to answer: *Where is revenue growing? Where is it leaking? Which customers are at risk — and what can we do about it?*
+A SaaS company has customer data scattered across five operational systems. Leadership needs a unified view to answer: *Where is revenue growing? Where is it leaking? Which customers are at risk, and what can we do about it?*
 
 ## Datasets
 
@@ -31,13 +31,13 @@ accounts ──┬── subscriptions ── feature_usage
 ## Key Analyses
 
 ### 1. MRR Movement Waterfall
-Decomposes monthly recurring revenue changes into new, expansion, contraction, and churned MRR — the most important chart for a SaaS CFO.
+Decomposes monthly recurring revenue changes into new, expansion, contraction, and churned MRR: the most important chart for a SaaS CFO.
 
 ### 2. Cohort Retention Heatmap
 Groups accounts by signup month and tracks retention over 18 months. Reveals whether the product is getting stickier over time and identifies problematic cohorts.
 
 ### 3. Churn Driver Analysis
-Joins churn events with feature usage and support ticket history to identify the behavioral signals that precede churn — moving beyond surface-level reason codes.
+Joins churn events with feature usage and support ticket history to identify the behavioral signals that precede churn - moving beyond surface-level reason codes.
 
 ### 4. Churn Risk Scoring Model
 A weighted composite score using six signals (feature adoption, error rates, ticket volume, escalations, auto-renew status, tenure) to identify at-risk accounts before they leave. Includes model validation and a high-risk account watchlist.
